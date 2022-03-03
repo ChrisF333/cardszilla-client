@@ -1,0 +1,69 @@
+
+//LoginPage.js
+
+import { useState, useContext } from "react";
+import { useNavigate } from "react-router-dom";
+import { AuthContext } from '../context/auth.context';
+import axios from "axios";
+
+const API_URL = "http://localhost:5005";
+
+function LoginPage(props) {
+    const [ email, setEmail ] = useState("");
+    const [ password, setPassword ] = useState("");
+    const [ errorMessage, setErrorMessage ] = useState(undefined);
+
+    const navigate = useNavigate();
+    const { storeToken, authenticateUser } = useContext(AuthContext);
+
+    const handleEmail = (e) => setEmail(e.target.value);
+    const handlePassword = (e) => setPassword(e.target.value);
+    
+    const handleLoginSubmit = (e) => {
+        e.preventDefault();
+        const requestBody = {email, password};
+
+        axios.post(`${API_URL}/auth/login`, requestBody)
+         .then((response) => {
+            storeToken(response.data.authToken); 
+            authenticateUser();
+             navigate("/home");
+         })
+         .catch((error) => {
+             const errorDescription = error.response.data.message;
+             setErrorMessage(errorDescription);
+         })
+    };
+
+    return (
+        <div className="LoginPage">
+            <h1>Login</h1>
+            <form onSubmit={handleLoginSubmit}>
+                <label>Email:
+                    <input 
+                    type="email"
+                    name="email"
+                    value={email}
+                    onChange={handleEmail}
+                    >
+                    </input>
+                </label>
+                <label>Password:
+                    <input
+                    type="password"
+                    name="password"
+                    value={password}
+                    onChange={handlePassword}
+                    >
+                    </input>
+                </label>
+                <button type="submit">login</button>
+            </form>
+
+            { errorMessage && <p className="error-message">{errorMessage}</p> }
+
+        </div>
+    )
+}
+
+export default LoginPage;
