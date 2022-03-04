@@ -9,6 +9,7 @@ import HomePage from './pages/HomePage';
 import IsPrivate from "./components/IsPrivate";  
 import IsAnon from "./components/IsAnon"; 
 import AccountPage from './pages/AccountPage';
+import CreateClub from './pages/CreateClub';
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
         <Route path="/login" element={<IsAnon> <LoginPage /> </IsAnon>} />
         <Route path="/home" element={<IsPrivate ><HomePage /> </IsPrivate>} />
         <Route path="/account" element={<IsPrivate> <AccountPage /> </IsPrivate>} />
+        <Route path='/createClub' element={<CreateClub />} />
       </Routes>
     </div>
   );
