@@ -10,6 +10,7 @@ import IsPrivate from "./components/IsPrivate";
 import IsAnon from "./components/IsAnon"; 
 import AccountPage from './pages/AccountPage';
 import CreateClub from './pages/CreateClub';
+import ClubDetailsPage from './pages/ClubDetailsPage';
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
         <Route path="/home" element={<IsPrivate ><HomePage /> </IsPrivate>} />
         <Route path="/account" element={<IsPrivate> <AccountPage /> </IsPrivate>} />
         <Route path='/createClub' element={<CreateClub />} />
+        <Route path='/clubDetails/:id' element={<ClubDetailsPage />} />
       </Routes>
     </div>
   );

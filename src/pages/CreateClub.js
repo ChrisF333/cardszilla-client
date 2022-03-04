@@ -92,8 +92,8 @@ function CreateClub() {
             <button type="submit">Create</button>
             { errorMessage && <p className="error-message">{errorMessage}</p> }
             </form>
-         <h5>State:</h5>
-         <pre>{JSON.stringify(checkedGames, null, 2)}</pre>
+         {/*<h5>State:</h5>*/}
+         {/*<pre>{JSON.stringify(checkedGames, null, 2)}</pre>*/}
            
 
         </div>
