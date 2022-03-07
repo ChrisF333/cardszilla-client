@@ -5,6 +5,8 @@ import axios from 'axios'
 import { useNavigate, useParams } from "react-router-dom";
 import { useEffect, useState } from 'react';
 import ClubDetails from '../components/ClubDetails';
+import ClubMembers from '../components/ClubMembers';
+import ClubEvents from '../components/ClubEvents';
 
 
 const API_URL = "http://localhost:5005";
@@ -41,11 +43,14 @@ function ClubDetailsPage() {
     return (
         <div className="ClubDetailsPage">
             <ClubDetails club={clubInfo} />
+            <ClubMembers club={clubInfo}/>
+            <ClubEvents club={clubInfo} />
         </div>
     );
 }
 }
 
 export default ClubDetailsPage;
+
 
 

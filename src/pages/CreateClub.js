@@ -53,7 +53,8 @@ function CreateClub() {
         
         axios.post(`${API_URL}/club/create`, requestBody, { headers: { Authorization: `Bearer ${storedToken}`} })
          .then((response) => {
-             navigate('/home'); //change to club details page later
+             const newClubId = response.data.club;
+             navigate(`/clubDetails/${newClubId._id}`); 
          })
          .catch((error) => {
              const errorDescription = error.response.data.message; //to avoid setting the state directly

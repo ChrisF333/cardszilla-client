@@ -11,6 +11,9 @@ import IsAnon from "./components/IsAnon";
 import AccountPage from './pages/AccountPage';
 import CreateClub from './pages/CreateClub';
 import ClubDetailsPage from './pages/ClubDetailsPage';
+import CreateMemberPage from './pages/CreateMemberPage';
+import CreateEventPage from './pages/CreateEventPage';
+
 
 function App() {
   return (
@@ -26,6 +29,8 @@ function App() {
         <Route path="/account" element={<IsPrivate> <AccountPage /> </IsPrivate>} />
         <Route path='/createClub' element={<CreateClub />} />
         <Route path='/clubDetails/:id' element={<ClubDetailsPage />} />
+        <Route path='/createMember/:id' element={<CreateMemberPage />} />
+        <Route path='/createEvent/:id' element={<CreateEventPage />} />
       </Routes>
     </div>
   );
