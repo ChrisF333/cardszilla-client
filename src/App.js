@@ -13,6 +13,7 @@ import CreateClub from './pages/CreateClub';
 import ClubDetailsPage from './pages/ClubDetailsPage';
 import CreateMemberPage from './pages/CreateMemberPage';
 import CreateEventPage from './pages/CreateEventPage';
+import EditClubDetailsPage from './pages/EditClubDetailsPage';
 
 
 function App() {
@@ -31,6 +32,7 @@ function App() {
         <Route path='/clubDetails/:id' element={<ClubDetailsPage />} />
         <Route path='/createMember/:id' element={<CreateMemberPage />} />
         <Route path='/createEvent/:id' element={<CreateEventPage />} />
+        <Route path='/editClubDetails/:id' element={<EditClubDetailsPage />} />
       </Routes>
     </div>
   );

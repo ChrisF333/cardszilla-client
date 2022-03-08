@@ -1,15 +1,25 @@
 
 //ClubDetails.js
 
-//import { Link } from "react-router-dom";
-//import { useEffect, useState, useContext } from 'react';
-//import { useNavigate} from 'react-router-dom';
+import { Link, useNavigate } from "react-router-dom";
+import axios from 'axios';
+
+const API_URL = "http://localhost:5005";
 
 function ClubDetails(props) {
     const { _id, name, games, createdAt } = props.club
     
+    const navigate = useNavigate()
+    
     let formattedDate = Date(createdAt);
     formattedDate = formattedDate.substring(0,15);
+
+    const handleDeleteClub = (e) => {
+        console.log('handleDeleteClubCalled');
+        const requestBody = { clubId: e };
+        axios.post(`${API_URL}/club/delete/`, requestBody);
+        navigate('/home');
+    }
 
     return (
         <div className="ClubDetailsCard">
@@ -26,6 +36,18 @@ function ClubDetails(props) {
                 })}
             </ul>            
             <p>Established: {formattedDate}</p>
+            
+            <Link to={`/editClubDetails/${_id}`}>
+                Edit club details
+            </Link>
+                <button 
+                    className="deleteItemButton"
+                    type="submit"
+                    alt="Delete this club?"
+                    onClick={() => {handleDeleteClub(_id)}}
+                >Delete club</button>
+            
+
             
 
         </div>
