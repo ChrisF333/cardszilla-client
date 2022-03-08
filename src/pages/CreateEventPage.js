@@ -32,6 +32,7 @@ function CreateEventPage() {
     }, []);
 
     //declare the rest of the variables
+    const [ eventDate, setEventDate ] = useState("");
     const [ game, setGame ] = useState("");
     const [ winner, setWinner ] = useState("");
     //const [ participants, setParticipants ] = useState(0);
@@ -42,9 +43,10 @@ function CreateEventPage() {
     
 
     //handle events
+    const handleEventDate = (e) => {setEventDate(e.target.value)};
     const handleGames = (e) => {setGame(e.target.value)};
     const handleWinner = (e) => {setWinner(e.target.value)};
-
+    
     const handleCheckboxChange = (item) => {
         const isChecked = checkedMembers.some(checkedMember => checkedMember === item)
         if (isChecked) {
@@ -60,8 +62,8 @@ function CreateEventPage() {
 
     const handleRecordSubmit = (e) => {
         e.preventDefault();
-        const requestBody = { record: record, game, winner, participants: checkedMembers };
-        console.log(requestBody);
+        const requestBody = { record: record, eventDate, game, winner, participants: checkedMembers };
+      
         axios.post(`${API_URL}/club/createEvent/${id}`, requestBody)
          .then((response) => {
              navigate(`/clubDetails/${id}`); 
@@ -82,6 +84,15 @@ function CreateEventPage() {
             <h3>This is the create event page</h3>
         
         <form onSubmit={handleRecordSubmit}>
+            <label>Event date:
+                <input 
+                    type="date"
+                    name="eventDate"
+                    value={eventDate}
+                    onChange={handleEventDate}
+                >
+                </input>
+            </label>
             <label>Game played: 
                 <select 
                     id="games" 

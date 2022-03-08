@@ -4,7 +4,7 @@
 //this component should return the last five events for the club
 import axios from 'axios';
 import { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, Navigate } from 'react-router-dom';
 
 const API_URL = "http://localhost:5005";    
 
@@ -13,7 +13,19 @@ function ClubEvents(props) {
     const linkToCreateEvent = "/createEvent/"+props.club._id;
 
     const [ recentEvents, setRecentEvents ] = useState(undefined);
-    const [isLoading, setLoading] = useState(true);
+    const [ latestEvents, setLatestEvents ] = useState(undefined);
+    const [ isLoading, setLoading] = useState(true);
+
+
+    //function to filter latest events
+    function filterLatestEvents(allEvents) {
+        let latestEvents = allEvents
+        latestEvents = latestEvents.sort(function(a, b) {
+            return new Date(b.eventDate) - new Date(a.eventDate);
+         });
+         latestEvents = latestEvents.slice(0,5);
+         setLatestEvents(latestEvents);
+    }
 
     const retrieveRecordCard = () => {
         axios.get(`${API_URL}/club/clubRecordCard/${record}`)
@@ -22,12 +34,11 @@ function ClubEvents(props) {
                 setRecentEvents(0);
                 setLoading(false);
             } else {
-                const retrievedRecordCard = response.data.recordCard;
+                const retrievedRecordCard = response.data.recordCard.record;
                 setRecentEvents(retrievedRecordCard);
-                setLoading(false);
-                console.log(retrievedRecordCard);
-            }
-            
+                filterLatestEvents(retrievedRecordCard);
+                setLoading(false);                
+            }            
          })
         .catch((error) => {
             const errorDescription = error.response.data.message;
@@ -38,6 +49,13 @@ function ClubEvents(props) {
     useEffect(() => {
         retrieveRecordCard();        
     }, []);
+
+    const handleDeleteEvent = (e) => {
+        console.log('handleDeleteEventCalled');
+        const requestBody = { eventId: e };
+        axios.post(`${API_URL}/club/deleteEvent/${record}`, requestBody);
+    }
+    
 
     if(isLoading){
         return (
@@ -55,10 +73,17 @@ function ClubEvents(props) {
             }
 
             {recentEvents.length > 0 && 
-                recentEvents.map((event) => {
+                latestEvents.map((event) => {
                     return (
-                        <div>
-                            <p>{event.game}</p>
+                        <div key={event._id}>
+                            <p>{(new Date(event.eventDate)).toLocaleDateString('en-GB')}</p>
+                            <p>{event.game.name}</p>
+                            <p>Winner: {event.winner.name}</p>
+                            <button 
+                                className="deleteItemButton"
+                                type="submit"
+                                onClick={() => {handleDeleteEvent(event._id)}}
+                            >X</button>
                         </div>
                     );
                 })}
