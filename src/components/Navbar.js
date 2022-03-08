@@ -37,7 +37,9 @@ function Navbar() {
 
   return (
     <nav className="Navbar">
-      ♢♧ Cardszilla ♡♤
+      <Link to="/home">
+        ♢♧ Cardszilla ♡♤
+        </Link>
       {!buttonToggle && 
         <Link to="/login">
           <button>Login</button>
