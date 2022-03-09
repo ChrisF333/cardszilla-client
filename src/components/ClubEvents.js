@@ -54,6 +54,7 @@ function ClubEvents(props) {
         console.log('handleDeleteEventCalled');
         const requestBody = { eventId: e };
         axios.post(`${API_URL}/club/deleteEvent/${record}`, requestBody);
+        window.location.reload(false);
     }
     
 
@@ -78,7 +79,8 @@ function ClubEvents(props) {
                         <div key={event._id}>
                             <p>{(new Date(event.eventDate)).toLocaleDateString('en-GB')}</p>
                             <p>{event.game.name}</p>
-                            <p>Winner: {event.winner.name}</p>
+                            {event.winner && <p>Winner: {event.winner.name}</p>}
+                            {!event.winner && <p>Winner: Other club member</p>}
                             <button 
                                 className="deleteItemButton"
                                 type="submit"
