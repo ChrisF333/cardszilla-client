@@ -7,14 +7,16 @@ import axios from 'axios';
 const API_URL = "http://localhost:5005";   
 
 function ClubMembers(props) {
-    const { members } = props.club
+    const { members } = props.club;
+    const { _id } = props.club;
     
     const linkToCreate = "/createMember/"+props.club._id;
-
+    
     const handleDeleteEvent = (e) => {
         console.log('handleDeleteMemberCalled');
         const requestBody = { memberId: e };
         axios.post(`${API_URL}/club/deleteMember/`, requestBody);
+        window.location.reload(false);
     }
     
     return (
