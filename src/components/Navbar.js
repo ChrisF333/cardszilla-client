@@ -43,7 +43,7 @@ function Navbar() {
         </Link>
       </div>
 
-      <div classNAme="NavbarRight">
+      <div className="NavbarRight">
       {!buttonToggle && 
         <Link to="/login">
           <button className="GeneralButton">Login</button>

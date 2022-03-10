@@ -1,70 +1,107 @@
-# Getting Started with Create React App
+# Ironhack-Project3-Cardszilla-
+<div id="top"></div>
+<!-- PROJECT LOGO -->
+<br />
+<div align="center">
+ <!-- <a href="https://github.com/DomKal11/Project2-cardspedia/">
+    <img src="main/Assets/Images/Others/our_host.png" alt="Logo" width="80" height="80"> -->
+  </a>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<h3 align="center">Cardspedia</h3>
 
-## Available Scripts
+  <p align="center">
+    A full stack application designed for Project Three of the Ironhack bootcamp
+    <br />
+    <a href="https://github.com/ChrisF333/cardszilla-server"><strong>Explore the docs »</strong></a>
+    <br />
+    <br />
+    <a href="https://cardszilla.herokuapp.com/">View Demo</a>
+    ·
+    <a href="https://github.com/ChrisF333/cardszilla-server/issues">Report Bug</a>
+  </p>
+</div>
 
-In the project directory, you can run:
 
-### `npm start`
+<!-- ABOUT THE PROJECT -->
+### Description 
+Cardszilla is a website for card club managers to store and administer their club details.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Managers can add members, keep track of events and record win/loss stats.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+<!--USER STORIES-->
+### User Stories
 
-### `npm test`
+Personas:<br />
+<b>Chris:</b> – an overzealous card club manager who thinks people appreciate his attention to detail in preserving the club record 
+<br />
+<b>John:</b> A card club member. Thinks Chris is a bit nuts but appreciates the ability to easily check the club record/leaderboard
+<br />
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Stories:<br />
+As a viewer, I want to know what cardszilla is when I arrive on the site<br />
+As a club manager, I want to signup for an account<br />
+As a club manager, I want to create a club<br />
+As a club manager, I want to add/remove members to a club<br />
+As a club manager, I want to add/remove events to a club<br />
+As a club manager, I want to easily track win and loss stats for members<br />
+As a club manager, I want to edit the club details<br />
+As a club manager, I want to edit my account details<br />
+As a member, I want to view the club page and see recent events</br>
 
-### `npm run build`
+<!--TECHNOLOGIES USED-->
+### Technologies used
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+* [Node.js](https://nodejs.org/)
+* [npm](https://www.npmjs.com/")
+* [HTML 5](http://www.html5.com/)
+* [CSS](https://www.w3schools.com/w3css/defaulT.asp)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+<!--MODELS-->
+### Wireframes
 
-### `npm run eject`
+[Landing page](/public/images/wireframe_landingpage.png?raw=true "Landing Page")
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+[Signup and Login](/public/images/wireframe_home.png?raw=true "Home")
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+[Game Library](/public/images/wireframe_clubdetails.png?raw=true "Club details")
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+<!--SERVER ROUTES-->
+### Components and Pages structure
+* Components
+ClubDetails<br />
+ClubEvents<br />
+ClubMembers<br />
+NavBar<br />
+IsAnon<br/>
+IsPrivate<br />
+* Pages
+User related: Landing page, Home page, Signup, login, account, update account <br />
+Club related: Creat club, member, event, club details, edit club 
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+<!--Future Work-->
+### Future Work
+* Additional views for member leaderboards 
 
-## Learn More
+<!--Project Link-->
+### Link to project
+<a href="https://cardszilla.herokuapp.com/">Cardspedia</a>
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+<!--RESOURCES-->
+### Resources
+* <a href="https://www.npmjs.com/">npm</a>
+* <a href="https://stackoverflow.com/">Stack Overflow</a>
 
-### Code Splitting
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+<!--TEAM MEMBERS-->
+### Team members
+* Chris Fagg
 
-### Analyzing the Bundle Size
+<!-- ACKNOWLEDGMENTS -->
+### Acknowledgments
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+* [Ironhack](https://www.ironhack.com/en)
 
-### Making a Progressive Web App
+<p align="right">(<a href="#top">back to top</a>)</p>
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
