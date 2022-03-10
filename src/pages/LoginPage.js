@@ -6,9 +6,9 @@ import { useNavigate } from "react-router-dom";
 import { AuthContext } from '../context/auth.context';
 import axios from "axios";
 
-const API_URL = "http://localhost:5005";
+//const API_URL = "http://localhost:5005";
 
-//const API_URL = "https://cardszilla.herokuapp.com"
+const API_URL = "https://cardszilla.herokuapp.com"
 
 function LoginPage(props) {
     const [ email, setEmail ] = useState("");
