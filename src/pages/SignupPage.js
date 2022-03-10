@@ -61,7 +61,7 @@ return (
             value={password}
             onChange={handlePassword}
         />
-        <button type="submit">Sign Up</button>
+        <button type="submit" className="GeneralButton">Sign Up</button>
         </form>
 
         { errorMessage && <p className="error-message">{errorMessage}</p> }

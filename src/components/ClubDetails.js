@@ -12,7 +12,9 @@ function ClubDetails(props) {
     const { _id, name, games, createdAt } = props.club
     
     const navigate = useNavigate()
-    
+
+    const storedToken = localStorage.getItem("authToken");
+
     let formattedDate = Date(createdAt);
     formattedDate = formattedDate.substring(0,15);
 
@@ -36,16 +38,16 @@ function ClubDetails(props) {
                 })}
             </ul>            
             <p>Established: {formattedDate}</p>
-            
+            {storedToken &&
             <Link to={`/editClubDetails/${_id}`}>
                 Edit club details
-            </Link>
-                <button 
+            </Link>}
+                {storedToken && <button 
                     className="deleteItemButton"
                     type="submit"
                     alt="Delete this club?"
                     onClick={() => {handleDeleteClub(_id)}}
-                >Delete club</button>
+                >Delete club</button>}
             
 
             

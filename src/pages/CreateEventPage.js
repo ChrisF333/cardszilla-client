@@ -83,10 +83,10 @@ function CreateEventPage() {
     } else {
     return (
         <div className="CreateEventPage">
-            <h3>This is the create event page</h3>
+            <h3>Create an event</h3>
         
         <form onSubmit={handleRecordSubmit}>
-            <label>Event date:
+            <label>Event date:</label>
                 <input 
                     type="date"
                     name="eventDate"
@@ -94,7 +94,7 @@ function CreateEventPage() {
                     onChange={handleEventDate}
                 >
                 </input>
-            </label>
+            
             <label>Game played: 
                 <select 
                     id="games" 
@@ -113,7 +113,7 @@ function CreateEventPage() {
                     })}
                 </select>
             </label>
-            <label>Participants: 
+            <label>Participants: </label>
                 {clubInfo.members.map(( { _id, name }, index) => {
                     return (
                         <div className="MembersListCheckBox" key={_id}>
@@ -128,8 +128,8 @@ function CreateEventPage() {
                         </div>
                     )
                 })}
-            </label>
-            <label>Winner: 
+            
+            <label>Winner: </label>
                 <select 
                     id="games" 
                     name="games"
@@ -146,8 +146,8 @@ function CreateEventPage() {
                         )
                     })}
                 </select>
-            </label>
-            <button type="submit">Add event</button>
+            
+            <button type="submit" className="GeneralButton">Add event</button>
         </form>
         
         </div>

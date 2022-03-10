@@ -46,25 +46,25 @@ function Navbar() {
       <div classNAme="NavbarRight">
       {!buttonToggle && 
         <Link to="/login">
-          <button>Login</button>
+          <button className="GeneralButton">Login</button>
         </Link>
       }
       
       {!buttonToggle && 
         <Link to="/signup">
-          <button>Signup</button>
+          <button className="GeneralButton">Signup</button>
         </Link>
       }
 
       {buttonToggle &&
         <Link to="/account">
-          <button>Account</button>
+          <button className="GeneralButton">Account</button>
         </Link>
       }
 
       {buttonToggle &&
         <Link to="/">
-          <button onClick={handleLogout}>Logout</button>
+          <button className="GeneralButton" onClick={handleLogout}>Logout</button>
         </Link>
       }
       </div>

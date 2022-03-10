@@ -44,16 +44,18 @@ function ClubDetailsPage() {
    } else {
     return (
         <div className="ClubDetailsPage">
-            <div className="ClubInfo">
-            <span className="ClubInfoSpan">
-                <ClubDetails club={clubInfo} />
-            </span>
-            <span className="ClubMemberSpan">
-                <ClubMembers club={clubInfo}/>
-            </span>
-            </div>            
-            <div className="ClubRecord">
-                <ClubEvents club={clubInfo} />
+            <div className="ClubDetailsColOne">
+                <div className="ClubDetails">
+                    <ClubDetails club={clubInfo} />
+                </div>
+                <div className="ClubRecord">
+                    <ClubEvents club={clubInfo} />
+                </div>
+            </div>
+            <div className="ClubDetailsColTwo">
+                <div className="ClubMembers">
+                    <ClubMembers club={clubInfo}/>                    
+                </div>
             </div>
         </div>
     );
@@ -61,6 +63,8 @@ function ClubDetailsPage() {
 }
 
 export default ClubDetailsPage;
+
+
 
 
 
