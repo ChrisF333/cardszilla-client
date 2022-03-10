@@ -6,9 +6,9 @@ import axios from 'axios';
 import { useState, useEffect } from 'react';
 import { Link, Navigate } from 'react-router-dom';
 
-const API_URL = "http://localhost:5005";    
+//const API_URL = "http://localhost:5005";    
 
-//const API_URL = "https://cardszilla.herokuapp.com"
+const API_URL = "https://cardszilla.herokuapp.com"
 
 function ClubEvents(props) {
     const { record } = props.club

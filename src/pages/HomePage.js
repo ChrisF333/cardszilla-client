@@ -5,9 +5,9 @@ import { Link } from "react-router-dom";
 import axios from 'axios';
 import { useState, useEffect } from 'react';
 
-const API_URL = "http://localhost:5005";  
+//const API_URL = "http://localhost:5005";  
 
-//const API_URL = "https://cardszilla.herokuapp.com"
+const API_URL = "https://cardszilla.herokuapp.com"
 
 function HomePage(props) {
     const [userClubs, setUserClubs] = useState([]);

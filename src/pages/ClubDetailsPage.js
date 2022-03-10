@@ -9,9 +9,9 @@ import ClubMembers from '../components/ClubMembers';
 import ClubEvents from '../components/ClubEvents';
 
 
-const API_URL = "http://localhost:5005";
+//const API_URL = "http://localhost:5005";
 
-//const API_URL = "https://cardszilla.herokuapp.com"
+const API_URL = "https://cardszilla.herokuapp.com"
 
 function ClubDetailsPage() {
     const [isLoading, setLoading] = useState(true);
