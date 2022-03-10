@@ -7,6 +7,8 @@ import { useEffect, useState } from 'react';
 
 const API_URL = "http://localhost:5005";
 
+//const API_URL = "https://cardszilla.herokuapp.com"
+
 function EditClubDetailsPage(){
     const [isLoading, setLoading] = useState(true);
     const [ clubInfo, setClubInfo ] = useState([]);

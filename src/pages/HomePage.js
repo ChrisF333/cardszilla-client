@@ -7,6 +7,8 @@ import { useState, useEffect } from 'react';
 
 const API_URL = "http://localhost:5005";  
 
+//const API_URL = "https://cardszilla.herokuapp.com"
+
 function HomePage(props) {
     const [userClubs, setUserClubs] = useState([]);
     const [ isLoading, setLoading] = useState(true);
@@ -37,6 +39,7 @@ function HomePage(props) {
         } else {
             return (
                 <div className="HomePage">
+                    <div className="HomePageContent">
                     <h2>Welcome {userClubs.username}, What would you like to do today?</h2>
                     
                     {(userClubs.ownedClubs.length === 0 || userClubs.ownedClubs === undefined) && 
@@ -58,12 +61,14 @@ function HomePage(props) {
                             );
                         })}
                     </div>                    
-                    <div>
-                        <Link to="../createClub">
-                            Create a new club!
+                    <h4>Start something new: </h4>
+                        <Link to="../createClub" className="UserClubs">
+                            Create a new club
                         </Link>
+                        <div>
                     </div>
                 </div>
+            </div>
             )
         }
 }

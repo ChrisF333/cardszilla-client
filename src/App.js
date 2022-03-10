@@ -14,6 +14,7 @@ import ClubDetailsPage from './pages/ClubDetailsPage';
 import CreateMemberPage from './pages/CreateMemberPage';
 import CreateEventPage from './pages/CreateEventPage';
 import EditClubDetailsPage from './pages/EditClubDetailsPage';
+import AboutPage from './pages/AboutPage';
 
 
 function App() {
@@ -33,6 +34,7 @@ function App() {
         <Route path='/createMember/:id' element={<CreateMemberPage />} />
         <Route path='/createEvent/:id' element={<CreateEventPage />} />
         <Route path='/editClubDetails/:id' element={<EditClubDetailsPage />} />
+        <Route path='/about' element={<AboutPage />} />
       </Routes>
     </div>
   );

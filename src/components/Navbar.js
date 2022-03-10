@@ -37,15 +37,19 @@ function Navbar() {
 
   return (
     <nav className="Navbar">
+      <div className="NavbarLeft">
       <Link to="/home">
         ♢♧ Cardszilla ♡♤
         </Link>
+      </div>
+
+      <div classNAme="NavbarRight">
       {!buttonToggle && 
         <Link to="/login">
           <button>Login</button>
         </Link>
       }
-
+      
       {!buttonToggle && 
         <Link to="/signup">
           <button>Signup</button>
@@ -63,6 +67,7 @@ function Navbar() {
           <button onClick={handleLogout}>Logout</button>
         </Link>
       }
+      </div>
     </nav>
   );
 }
