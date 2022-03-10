@@ -7,6 +7,8 @@ import axios from 'axios';
 
 const API_URL = "http://localhost:5005";
 
+//const API_URL = "https://cardszilla.herokuapp.com"
+
 function CreateMemberPage(props) {
     const { id } = useParams();
     const [ name, setName ] = useState("");

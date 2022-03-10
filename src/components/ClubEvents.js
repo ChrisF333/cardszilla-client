@@ -8,6 +8,8 @@ import { Link, Navigate } from 'react-router-dom';
 
 const API_URL = "http://localhost:5005";    
 
+//const API_URL = "https://cardszilla.herokuapp.com"
+
 function ClubEvents(props) {
     const { record } = props.club
     const linkToCreateEvent = "/createEvent/"+props.club._id;
@@ -65,7 +67,7 @@ function ClubEvents(props) {
         } else {
     return (
         <div className="ClubEventsCard">
-            <h3>This is the record card</h3>
+            <h3>Club record</h3>
 
             {(recentEvents === 0 || recentEvents === undefined) && 
                 <div>
@@ -76,11 +78,13 @@ function ClubEvents(props) {
             {recentEvents.length > 0 && 
                 latestEvents.map((event) => {
                     return (
-                        <div key={event._id}>
+                        <div className="ClubRows" key={event._id}>
                             <p>{(new Date(event.eventDate)).toLocaleDateString('en-GB')}</p>
-                            <p>{event.game.name}</p>
-                            {event.winner && <p>Winner: {event.winner.name}</p>}
-                            {!event.winner && <p>Winner: Other club member</p>}
+                            <p>-</p>
+                            <p>Game: {event.game.name} </p>
+                            <p>-</p>
+                            {event.winner && <p>Winner: {event.winner.name} </p>}
+                            {!event.winner && <p>Winner: Other club member </p>}
                             <button 
                                 className="deleteItemButton"
                                 type="submit"

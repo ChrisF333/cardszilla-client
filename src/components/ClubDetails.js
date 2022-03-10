@@ -6,6 +6,8 @@ import axios from 'axios';
 
 const API_URL = "http://localhost:5005";
 
+//const API_URL = "https://cardszilla.herokuapp.com"
+
 function ClubDetails(props) {
     const { _id, name, games, createdAt } = props.club
     
@@ -23,11 +25,9 @@ function ClubDetails(props) {
 
     return (
         <div className="ClubDetailsCard">
-            <h3>this is the club details card</h3>
+            <h2>{name}</h2>
 
-            <h4>{name}</h4> 
-
-            <h5>Purveyors of:</h5>
+            <h4>Purveyors of:</h4>
             <ul>
             {games.map(game => {
                     return (

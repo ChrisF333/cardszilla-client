@@ -6,6 +6,8 @@ import { useNavigate } from "react-router-dom";
 
 const API_URL = "http://localhost:5005"
 
+//const API_URL = "https://cardszilla.herokuapp.com"
+
 function AccountPage(props) {
     const [ email, setEmail ] = useState("");
     const [ username, setUsername ] =useState("");
