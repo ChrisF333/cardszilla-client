@@ -118,7 +118,7 @@ function EditClubDetailsPage(){
                         </div>
                     )
                 })}
-                <button type="submit">Submit changes</button>
+                <button type="submit" className="GeneralButton">Submit changes</button>
                 { errorMessage && <p className="error-message">{errorMessage}</p> }
                 </form>
             </div>

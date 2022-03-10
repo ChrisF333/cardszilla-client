@@ -70,29 +70,29 @@ function CreateClub() {
             <h1>Create a club</h1>
 
             <form onSubmit={handleClubSubmit}>
-            <label>What's the name of your club?</label>
+            <p>What's the name of your club?</p>
             <input 
                 type="text"
                 name="name"
                 value={name}
                 onChange={handleName}
             />
-            <label>Which games do you play?</label>
+            <p>Which games do you play?</p>            
             {games.map(( { _id, name }, index) => {
                 return (
                     <div className="GamesListCheckBox" key={_id}>
-                    <label htmlFor={`GamesList_${index}`}>{name}</label>
+                    <label htmlFor={`GamesList_${index}`}>{name}
                         <input                     
                             type="checkbox"
                             id={`GamesList_${index}`}
                             name={name}
                             value={name}
                             onChange={() => handleCheckboxChange(_id)}                          
-                        />
+                        /></label>
                     </div>
                 )
             })}
-            <button type="submit">Create</button>
+            <button type="submit" className="GeneralButton">Create</button>
             { errorMessage && <p className="error-message">{errorMessage}</p> }
             </form>
          {/*<h5>State:</h5>*/}

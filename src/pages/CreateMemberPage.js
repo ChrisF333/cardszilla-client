@@ -40,42 +40,42 @@ function CreateMemberPage(props) {
 
     return (
         <div className="CreateMemberPage">
-            <h3>This is the create member page</h3>
+            <h3>Create a member</h3>
 
             <form onSubmit={handleSubmitMember}>
-                <label>Member name:
+                <label>Member name:</label>
                     <input
                         type="text"
                         name="name"
                         value={name}
                         onChange={handleName}
                     ></input>
-                </label>
-                <label>Nickname (if applicable):
+                
+                <label>Nickname (if applicable):</label>
                     <input
                         type="text"
                         name="nickname"
                         value={nickname}
                         onChange={handleNickname}
                     ></input>
-                </label>
-                <label>How may wins has this player had so far?
+                
+                <label>How may wins has this player had so far?</label>
                     <input
                         type="number"
                         name="name"
                         value={wins}
                         onChange={handleWins}
                     ></input>
-                </label>
-                <label>And losses? 
+                
+                <label>And losses? </label>
                     <input
                         type="number"
                         name="name"
                         value={losses}
                         onChange={handleLosses}
                     ></input>
-                </label>
-                <button type="submit">Add member to the club</button>
+                
+                <button type="submit" className="GeneralButton">Add member to the club</button>
             </form>
             
         </div>

@@ -84,12 +84,12 @@ function AccountPage(props) {
 
             {!toggleUpdateSwitch && <p>Username: {username}</p>}            
             {!toggleUpdateSwitch && <p>Email address: {email}</p>}
-            {!toggleUpdateSwitch && <button onClick={handleUpdateToggle}>Update details</button>}
-            {!toggleUpdateSwitch && <button onClick={handleDelete}>Delete my account</button>}
+            {!toggleUpdateSwitch && <button onClick={handleUpdateToggle} className="GeneralButton">Update details</button>}
+            {!toggleUpdateSwitch && <button onClick={handleDelete} className="GeneralButton">Delete my account</button>}
 
             {toggleUpdateSwitch && 
                 <form onSubmit={handleUpdateDetails}>
-                <label>Username:
+                <label>Username:</label>
                     <input 
                     type="username"
                     name="username"
@@ -97,8 +97,8 @@ function AccountPage(props) {
                     onChange={handleUsername}
                     >
                     </input>
-                </label>
-                <label>Email:
+                
+                <label>Email:</label>
                     <input 
                     type="email"
                     name="email"
@@ -106,8 +106,8 @@ function AccountPage(props) {
                     onChange={handleEmail}
                     >
                     </input>
-                </label>
-                <label>Password:
+                
+                <label>Password:</label>
                     <input
                     type="password"
                     name="password"
@@ -115,8 +115,8 @@ function AccountPage(props) {
                     onChange={handlePassword}
                     >
                     </input>
-                </label>
-                <button type="submit">Submit changes</button>
+                
+                <button type="submit" className="GeneralButton">Submit changes</button>
                 { errorMessage && <p className="error-message">{errorMessage}</p> }
             </form>}
         </div>

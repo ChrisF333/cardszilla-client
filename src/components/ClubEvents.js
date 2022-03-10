@@ -18,6 +18,7 @@ function ClubEvents(props) {
     const [ latestEvents, setLatestEvents ] = useState(undefined);
     const [ isLoading, setLoading] = useState(true);
 
+    const storedToken = localStorage.getItem("authToken");
 
     //function to filter latest events
     function filterLatestEvents(allEvents) {
@@ -85,11 +86,11 @@ function ClubEvents(props) {
                             <p>-</p>
                             {event.winner && <p>Winner: {event.winner.name} </p>}
                             {!event.winner && <p>Winner: Other club member </p>}
-                            <button 
+                            {storedToken &&<button 
                                 className="deleteItemButton"
                                 type="submit"
                                 onClick={() => {handleDeleteEvent(event._id)}}
-                            >X</button>
+                            >x</button>}
                         </div>
                     );
                 })}

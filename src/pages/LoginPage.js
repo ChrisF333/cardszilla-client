@@ -41,7 +41,7 @@ function LoginPage(props) {
         <div className="LoginPage">
             <h1>Login</h1>
             <form onSubmit={handleLoginSubmit}>
-                <label>Email:
+                <label>Email:</label>
                     <input 
                     type="email"
                     name="email"
@@ -49,8 +49,8 @@ function LoginPage(props) {
                     onChange={handleEmail}
                     >
                     </input>
-                </label>
-                <label>Password:
+                
+                <label>Password:</label>
                     <input
                     type="password"
                     name="password"
@@ -58,8 +58,8 @@ function LoginPage(props) {
                     onChange={handlePassword}
                     >
                     </input>
-                </label>
-                <button type="submit">login</button>
+                
+                <button type="submit" className="GeneralButton">login</button>
             </form>
 
             { errorMessage && <p className="error-message">{errorMessage}</p> }

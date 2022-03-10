@@ -14,6 +14,8 @@ function ClubMembers(props) {
     
     const linkToCreate = "/createMember/"+props.club._id;
     
+    const storedToken = localStorage.getItem("authToken");
+
     const handleDeleteEvent = (e) => {
         console.log('handleDeleteMemberCalled');
         const requestBody = { memberId: e };
@@ -36,14 +38,14 @@ function ClubMembers(props) {
                 members.map((member) => {
                     return (
                         <div key={member._id} className="ClubRows">
-                            <h5>{member.name}</h5>
+                            <p><b>{member.name}</b></p>
                             <p>Wins: {member.wins}</p>
                             <p>Losses: {member.losses}</p>
-                            <button 
+                            {storedToken &&<button 
                                 className="deleteItemButton"
                                 type="submit"
                                 onClick={() => {handleDeleteEvent(member._id)}}
-                            >X</button>
+                            >x</button>}
                         </div>
                     );  
                 })
